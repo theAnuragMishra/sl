@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Heart</title>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    </link>
+
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&amp;display=swap" rel="stylesheet">
+    </link>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    </link>
+
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&amp;display=swap" rel="stylesheet">
+    </link>
+
+    <style>
+        .back {
+            position: fixed;
+            margin: 0;
+            padding: 0;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            animation-name: backdiv;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+        }
+
+        .heart {
+            position: absolute;
+            background-color: pink;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            width: 300px;
+            height: 300px;
+            transform: rotate(-45deg);
+            animation-name: beat, colorchange;
+            animation-duration: 1s, 1s;
+            animation-iteration-count: infinite, infinite;
+            z-index: 30;
+
+
+        }
+
+        .heart::before {
+
+            position: absolute;
+            top: -150px;
+            left: 0px;
+            content: "";
+            background-color: pink;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            z-index: 2;
+            animation-name: colorchange;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+        }
+
+        .heart::after {
+            position: absolute;
+            top: 0px;
+            left: 150px;
+            content: "";
+            background-color: pink;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            z-index: 30;
+            animation-name: colorchange;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+
+        }
+
+        @keyframes beat {
+            0% {
+                transform: scale(1) rotate(-45deg);
+
+            }
+
+            50% {
+                transform: scale(0.6) rotate(-45deg);
+
+            }
+
+            100% {}
+        }
+
+        @keyframes backdiv {
+            50% {
+                background: #000000;
+            }
+        }
+
+        @keyframes colorchange {
+            0% {
+                background: pink;
+            }
+
+            50% {
+
+                background: rgb(80, 1, 1);
+            }
+
+            100% {
+                background: pink;
+            }
+        }
+
+
+
+
+        /*copied night css */
+
+        @keyframes move-twink-back {
+            from {
+                background-position: 0 0;
+            }
+
+            to {
+                background-position: -10000px 5000px;
+            }
+        }
+
+        @keyframes move-clouds-back {
+            from {
+                background-position: 0 0;
+            }
+
+            to {
+                background-position: 10000px 0;
+            }
+        }
+
+        @keyframes cg {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .night {
+            animation-name: cg;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+        }
+
+        .stars,
+        .twinkling,
+        .clouds {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
+
+
+        }
+
+        .stars {
+            background: #000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
+            z-index: 0;
+        }
+
+        .twinkling {
+            background: transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;
+            z-index: 1;
+
+            animation: move-twink-back 200s linear infinite;
+        }
+
+        .clouds {
+            background: transparent url(http://www.script-tutorials.com/demos/360/images/clouds3.png) repeat top center;
+            z-index: 3;
+
+
+            animation: move-clouds-back 200s linear infinite;
+        }
+
+        @keyframes iluk {
+            0% {
+                opacity: 1;
+
+
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+
+            }
+        }
+
+        @keyframes shrk {
+            0% {
+                opacity: 0;
+
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .ilu {
+            font-family: 'Ubuntu', sans-serif;
+            display: block;
+            position: absolute;
+            top: 18.4rem;
+            left: 43.8rem;
+            font-size: xx-large;
+            color: white;
+            z-index: 99;
+            animation-name: iluk;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-timing-function: cubic-bezier(0, 1, 0, 1);
+            font-weight: 900;
+        }
+
+        .shr {
+            font-family: 'Ubuntu', sans-serif;
+            display: block;
+            position: absolute;
+            top: 17.5rem;
+            left: 43.5rem;
+            font-size: 3rem;
+            color: black;
+            z-index: 99;
+            animation-name: shrk;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-timing-function: cubic-bezier(0, 1, 0, 1);
+            font-weight: 900;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ilu">I love you</div>
+    <div class="shr">Shreya</div>
+    <div class="back"></div>
+    <div class="heart" id="heart"></div>
+    <div class="night">
+        <div class="stars"></div>
+        <div class="twinkling"></div>
+        <div class="clouds"></div>
+
+
+
+    </div>
+
+</body>
+
+</html>
